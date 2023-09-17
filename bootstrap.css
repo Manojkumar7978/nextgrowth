@@ -104,3 +104,46 @@ input{
 .modal_close_button:hover{
     border: 2px solid #343a40;
 }
+
+.pricing-header{
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.pricing-header h1{
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+.pricing-header p{
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    margin-top: -2rem;
+}
+
+
+
+
+
+/* Styles for screens with a minimum width of 350px and a maximum width of 600px */
+@media screen and (max-width: 600px) {
+    .navbar{
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+    .links{
+        flex-wrap: wrap;
+    }
+    .navbar>:nth-child(2){
+        flex-direction: column;
+    }
+    .pricing-header{
+    width: 85%;
+   }
+}
