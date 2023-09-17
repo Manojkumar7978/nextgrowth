@@ -1,4 +1,4 @@
-# nextGrowth Labs
+# nextGrowth Labs Assignment
 
 ## Section A:(task 1)
 A Simple Project with Vanilla JavaScript
