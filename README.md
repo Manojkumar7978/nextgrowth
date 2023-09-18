@@ -8,3 +8,11 @@ This project is a simple web application built entirely with vanilla JavaScript.
 
 ## Features
 - Feature 1: Simple information form.
+
+## Installation
+
+- git clone https://github.com/Manojkumar7978/nextgrowth.git
+- cd nextgrowth
+- npm start
+
+

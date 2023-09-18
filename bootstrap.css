@@ -75,7 +75,7 @@ label{
     font-size: 1.25rem;
     font-weight: 400;
 }
-input{
+input,#submit{
     border: 1px solid #343a40;
     height: 2rem;
     border-radius: 5px;
@@ -104,7 +104,17 @@ input{
 .modal_close_button:hover{
     border: 2px solid #343a40;
 }
-
+h2{
+    font-weight: 500;
+    color: #343a40;
+    text-align: center;
+}
+.range{
+    min-width:300px ;
+    display: block;
+    margin: auto;
+    forced-color-adjust: #343a40;
+}
 .pricing-header{
     width: 65%;
     margin: auto;
@@ -126,11 +136,115 @@ input{
     margin-top: -2rem;
 }
 
+.plan-container{
+    display: flex;
+    padding: 3rem;
+    gap: 1rem ;
+}
+.card{
+    position: relative;
+    min-width: 300px;
+    box-sizing: border-box;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+    border-radius: 0.25rem;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.125);
+}
+.card>div:nth-child(1){
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+    background-color: rgba(0,0,0,.03);
+    padding: 1.25rem 0.75rem;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+ 
+}
+.card>div p{
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0;
+}
+.price{
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0.75rem 0;
+}
+.price>span{
+    color: #6c757d;
+    font-size: 80%;
+    font-weight: 400;
+}
+.card ul{
+    list-style-type: none;
+    padding-inline-start: 0;
+    text-align: center;
+}
+
+.card button{
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+    color: #ffffff;
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 400;
+}
+.highlighting{
+    border-color:#0059ff;
+    box-shadow: 0px 0px 20px #0059ff;
+}
+.card button:hover{
+    background-color: #0059ff;
+}
+
+.footer{
+    width: 90%;
+    padding: 3rem 0;
+    margin: auto;
+    margin-top: 3rem;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.footer>div:nth-child(1){
+    width: 250px;
+}
+
+ul{
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-bottom: 1rem;
+}
+
+.footerlist{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    box-sizing: border-box;
+
+}
+.footerlist-heading{
+    margin: 0;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.footerlist li{
+    color: #6c757d;
+}
 
 
 
-
-/* Styles for screens with a minimum width of 350px and a maximum width of 600px */
+/* Styles for screens with a minimum width */
 @media screen and (max-width: 600px) {
     .navbar{
         flex-direction: column;
@@ -146,4 +260,21 @@ input{
     .pricing-header{
     width: 85%;
    }
+   
+}
+
+@media screen and (max-width: 750px) {
+    .plan-container{
+        flex-wrap: wrap;
+    }
+    .card{
+       
+        width: 100%;
+       }
+    .footer{
+        flex-direction: row;
+    }
+    .footerlist{
+        margin-top: 1rem;
+    }
 }
