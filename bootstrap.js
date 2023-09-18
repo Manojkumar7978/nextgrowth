@@ -208,6 +208,65 @@ range.addEventListener('change',()=>{
     
 })
 
+//lazy loding function
+let scroll=false;
+//getting some ranom images
+async function getData(){
+    if(scroll)
+    return;
+    scroll=true
+    document.querySelector('.loading').style.display='block'
+    try {
+        let data=await fetch(`https://api.unsplash.com/photos/random?client_id=0ULKxBCrUzqbqv-f0-D1757H7cCV3OAjlDlyBVLmw84&count=30`)
+        data=await data.json()
+       showimage(data)
+        scroll=false
 
+    } catch (error) {
+        return error
+        scroll=false
+    }
+}
+getData()
+
+let imgcontainer=document.querySelector('.image-container')
+
+//showing images on container
+function showimage(data){
+    data.map((el,id)=>{
+        let card=document.createElement('div')
+        card.setAttribute('class','images-card')
+
+        let img=document.createElement('img')
+        img.setAttribute('src',el.urls.small)
+        img.setAttribute('alt',el.alt_description)
+        img.setAttribute('class','image')
+        img.setAttribute('loading','lazy')
+        card.append(img)
+        imgcontainer.append(card)
+    })
+    document.querySelector('.loading').style.display='none'
+}
+
+
+// user is at bottom of the window or not
+  function isAtBottom() {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+  
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+    const proximityToBottom = 100;
+    return scrollY + windowHeight >= documentHeight - proximityToBottom;
+  }
+  
+
+  window.addEventListener('scroll', () => {
+    if (isAtBottom()) {
+        getData()
+    }
+  });
 
 
